@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
+    <title>Compare RethinkDB and MySql</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Compare RethinkDB and MySQL</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th>Query</th>
+                <th>MySQL</th>
+                <th>RethinkDB</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        select * from sinhvien
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        select * from monhoc
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        select * from dangkymonhoc where maMH = "1000"
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        select * from sinhvien join dangkymonhoc limit 1000000
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        select * from sinhvien join dangkymonhoc join monhoc limit 500000
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com')
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        DELETE FROM sinhvien WHERE maSV = '12345'
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000'
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Excute</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success">Excute</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

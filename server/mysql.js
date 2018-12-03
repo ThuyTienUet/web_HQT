@@ -77,7 +77,7 @@ function serverAnswerGetUserInfoJoinUserDeviceJoinDeviceInfo(Rows, Start) {
 }
 
 exports.insertUser = function insertUser(start, callback) {
-	con.query("INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com');", function (err, rows) {
+	con.query("INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com')", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
@@ -86,7 +86,7 @@ exports.insertUser = function insertUser(start, callback) {
 }
 
 exports.deleteUser = function deleteUser(start, callback) {
-	con.query("DELETE FROM sinhvien WHERE maSV = '12345';", function (err, rows) {
+	con.query("DELETE FROM sinhvien WHERE maSV = '12345'", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
@@ -95,7 +95,7 @@ exports.deleteUser = function deleteUser(start, callback) {
 }
 
 exports.updateUser = function updateUser(start, callback) {
-	con.query("update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000';", function (err, rows) {
+	con.query("update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000'", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
