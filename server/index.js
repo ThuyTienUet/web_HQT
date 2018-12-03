@@ -10,7 +10,7 @@ app.listen(port);
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({	extended: true })); 
 
-console.log('\n============================ LISTENING ON PORT 6001================================\n');
+console.log('\n============================ LISTENING ON PORT 5555================================\n');
 
 app.get('/mysql/getStudents', function (req, res) {
    var start = Date.now();

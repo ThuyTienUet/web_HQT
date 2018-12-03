@@ -3,7 +3,7 @@ r = require('rethinkdb');
 exports.rgetStudents = function rgetStudents(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('deviceinfo').count().run(conn, function(err, res) {
+  		r.db('dbms').table('sinhvien').count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRGetStudents(start)));
@@ -23,7 +23,7 @@ function serverAnswerRGetStudents(Start) {
 exports.rgetCourseRegistration = function rgetCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('deviceinfo').filter({vendor:"Apple Inc."}).count().run(conn, function(err, res) {
+  		r.db('dbms').table('dangkymonhoc').filter({maMH:"1000"}).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRGetCourseRegistration(start)));
@@ -40,10 +40,12 @@ function serverAnswerRGetCourseRegistration(Start) {
     return result;
 }
 
+/* ke tu ham nay chua sua ==> */
+
 exports.rgetStudentsCourseRegistration = function rgetStudentsCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table("userdevice").innerJoin(r.table("deviceinfo"), function (userdevice, deviceinfo) {return userdevice("deviceid").eq(deviceinfo("id"));}).zip().limit(10).count().run(conn, function(err, res) {
+  		r.db('dbms').table("sinhvien").innerJoin(r.table("dangkymonhoc"), function (sinhvien, dangkymonhoc) {return userdevice("deviceid").eq(deviceinfo("id"));}).zip().limit(10).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRGetStudentsCourseRegistration(start)));
