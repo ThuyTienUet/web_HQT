@@ -24,21 +24,10 @@
                         select * from sinhvien
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="getStudents(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        select * from monhoc
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rgetStudents(this)">Excute</button>
                     </td>
                 </tr>
                 <tr>
@@ -46,10 +35,10 @@
                         select * from dangkymonhoc where maMH = "1000"
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="getCourseRegistration(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rgetCourseRegistration(this)">Excute</button>
                     </td>
                 </tr>
                 <tr>
@@ -57,10 +46,10 @@
                         select * from sinhvien join dangkymonhoc limit 1000000
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="getStudentsCourseRegistration(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rgetStudentsCourseRegistration(this)">Excute</button>
                     </td>
                 </tr>
                 <tr>
@@ -68,10 +57,10 @@
                         select * from sinhvien join dangkymonhoc join monhoc limit 500000
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="getStudentsCourseRegistrationCourse(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        No support
                     </td>
                 </tr>
                 <tr>
@@ -79,10 +68,10 @@
                         INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com')
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="insertStudent(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rinsertStudent(this)">Excute</button>
                     </td>
                 </tr>
                 <tr>
@@ -90,10 +79,10 @@
                         DELETE FROM sinhvien WHERE maSV = '12345'
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="deleteStudent(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rdeleteStudent(this)">Excute</button>
                     </td>
                 </tr>
                 <tr>
@@ -101,15 +90,17 @@
                         update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000'
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary">Excute</button>
+                        <button type="button" class="btn btn-primary" onclick="updateStudent(this)">Excute</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-success">Excute</button>
+                        <button type="button" class="btn btn-success" onclick="rupdateStudent(this)">Excute</button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <script src="./vendor/javascript/jquery.min.js"></script>
+    <script src="./vendor/javascript/main.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,17 @@
 r = require('rethinkdb');
 
-exports.rgetUserInfo = function rgetUserInfo(start, callback) {
+exports.rgetStudents = function rgetStudents(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table('deviceinfo').count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRGetUserInfo(start)));
+    		callback(null, JSON.stringify(serverAnswerRGetStudents(start)));
   		});
 	});
 };
 
-function serverAnswerRGetUserInfo(Start) {
+function serverAnswerRGetStudents(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -20,18 +20,18 @@ function serverAnswerRGetUserInfo(Start) {
     return result;
 }
 
-exports.rgetAppleDeviceInfo = function rgetAppleDeviceInfo(start, callback) {
+exports.rgetCourseRegistration = function rgetCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table('deviceinfo').filter({vendor:"Apple Inc."}).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRGetAppleDeviceInfo(start)));
+    		callback(null, JSON.stringify(serverAnswerRGetCourseRegistration(start)));
   		});
 	});
 };
 
-function serverAnswerRGetAppleDeviceInfo(Start) {
+function serverAnswerRGetCourseRegistration(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -40,18 +40,18 @@ function serverAnswerRGetAppleDeviceInfo(Start) {
     return result;
 }
 
-exports.rgetUserInfoJoinUserDevice = function rgetUserInfoJoinUserDevice(start, callback) {
+exports.rgetStudentsCourseRegistration = function rgetStudentsCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table("userdevice").innerJoin(r.table("deviceinfo"), function (userdevice, deviceinfo) {return userdevice("deviceid").eq(deviceinfo("id"));}).zip().limit(10).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRGetUserInfoJoinUserDevice(start)));
+    		callback(null, JSON.stringify(serverAnswerRGetStudentsCourseRegistration(start)));
   		});
 	});
 };
 
-function serverAnswerRGetUserInfoJoinUserDevice(Start) {
+function serverAnswerRGetStudentsCourseRegistration(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -60,18 +60,18 @@ function serverAnswerRGetUserInfoJoinUserDevice(Start) {
     return result;
 }
 
-exports.rinsertUser = function rinsertUser(start, callback) {
+exports.rinsertStudent = function rinsertStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table('deviceinfo').insert({id:100000000,mash:100000,vendor:"asdad"}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRInsertUser(start)));
+    		callback(null, JSON.stringify(serverAnswerRInsertStudent(start)));
   		});
 	});
 };
 
-function serverAnswerRInsertUser(Start) {
+function serverAnswerRInsertStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -80,18 +80,18 @@ function serverAnswerRInsertUser(Start) {
     return result;
 }
 
-exports.rdeleteUser = function rdeleteUser(start, callback) {
+exports.rdeleteStudent = function rdeleteStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table('deviceinfo').filter({id:100000000}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRDeleteUser(start)));
+    		callback(null, JSON.stringify(serverAnswerRDeleteStudent(start)));
   		});
 	});
 };
 
-function serverAnswerRDeleteUser(Start) {
+function serverAnswerRDeleteStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -100,18 +100,18 @@ function serverAnswerRDeleteUser(Start) {
     return result;
 }
 
-exports.rupdateUser = function rupdateUser(start, callback) {
+exports.rupdateStudent = function rupdateStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
   		r.db('dbms').table('deviceinfo').filter({id:100000000}).update({mash:"asddsgfg"}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
-    		callback(null, JSON.stringify(serverAnswerRUpdateUser(start)));
+    		callback(null, JSON.stringify(serverAnswerRUpdateStudent(start)));
   		});
 	});
 };
 
-function serverAnswerRUpdateUser(Start) {
+function serverAnswerRUpdateStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({

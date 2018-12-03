@@ -12,105 +12,105 @@ app.use(bodyParser.urlencoded({	extended: true }));
 
 console.log('\n============================ LISTENING ON PORT 6001================================\n');
 
-app.get('/mysql/getUserInfo', function (req, res) {
+app.get('/mysql/getStudents', function (req, res) {
    var start = Date.now();
-   SQL.getUserInfo(start, function (err, result) {
+   SQL.getStudents(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/getUserInfo', function (req, res) {
+app.get('/rt/getStudents', function (req, res) {
    var start = Date.now();
-   RT.rgetUserInfo(start, function (err, result) {
+   RT.rgetStudents(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/getAppleDeviceInfo', function (req, res) {
+app.get('/mysql/getCourseRegistration', function (req, res) {
    var start = Date.now();
-   SQL.getAppleDeviceInfo(start, function (err, result) {
+   SQL.getCourseRegistration(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/getAppleDeviceInfo', function (req, res) {
+app.get('/rt/getCourseRegistration', function (req, res) {
    var start = Date.now();
-   RT.rgetAppleDeviceInfo(start, function (err, result) {
+   RT.rgetCourseRegistration(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/getUserInfoJoinUserDevice', function (req, res) {
+app.get('/mysql/getStudentsCourseRegistration', function (req, res) {
    var start = Date.now();
-   SQL.getUserInfoJoinUserDevice(start, function (err, result) {
+   SQL.getStudentsCourseRegistration(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/getUserInfoJoinUserDevice', function (req, res) {
+app.get('/rt/getStudentsCourseRegistration', function (req, res) {
    var start = Date.now();
-   RT.rgetUserInfoJoinUserDevice(start, function (err, result) {
+   RT.rgetStudentsCourseRegistration(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/getUserInfoJoinUserDeviceJoinDeviceInfo', function (req, res) {
+app.get('/mysql/getStudentsCourseRegistrationCourse', function (req, res) {
    var start = Date.now();
-   SQL.getUserInfoJoinUserDeviceJoinDeviceInfo(start, function (err, result) {
+   SQL.getStudentsCourseRegistrationCourse(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/insertUser', function (req, res) {
+app.get('/mysql/insertStudent', function (req, res) {
    var start = Date.now();
-   SQL.insertUser(start, function (err, result) {
+   SQL.insertStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/insertUser', function (req, res) {
+app.get('/rt/insertStudent', function (req, res) {
    var start = Date.now();
-   RT.rinsertUser(start, function (err, result) {
+   RT.rinsertStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/deleteUser', function (req, res) {
+app.get('/mysql/deleteStudent', function (req, res) {
    var start = Date.now();
-   SQL.deleteUser(start, function (err, result) {
+   SQL.deleteStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/deleteUser', function (req, res) {
+app.get('/rt/deleteStudent', function (req, res) {
    var start = Date.now();
-   RT.rdeleteUser(start, function (err, result) {
+   RT.rdeleteStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/mysql/updateUser', function (req, res) {
+app.get('/mysql/updateStudent', function (req, res) {
    var start = Date.now();
-   SQL.updateUser(start, function (err, result) {
+   SQL.updateStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
 });
 
-app.get('/rt/updateUser', function (req, res) {
+app.get('/rt/updateStudent', function (req, res) {
    var start = Date.now();
-   RT.rupdateUser(start, function (err, result) {
+   RT.rupdateStudent(start, function (err, result) {
         res.send(result);
         console.log(result);
    })
