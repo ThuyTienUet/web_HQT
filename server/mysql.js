@@ -16,13 +16,13 @@ con.connect(function (err) {
     console.log("Successfully connected to database!");
 });
 
-exports.getUserInfo = function getUserInfo(start, callback) {
+exports.getStudents = function getSTudents(start, callback) {
 	con.query("select * from sinhvien", function (err, rows) {
-		callback(null, JSON.stringify(serverAnswerGetUserInfo(rows, start)));
+		callback(null, JSON.stringify(serverAnswerGetStudents(rows, start)));
 	})
 };
 
-function serverAnswerGetUserInfo(Rows, Start) {
+function serverAnswerGetStudents(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -31,13 +31,13 @@ function serverAnswerGetUserInfo(Rows, Start) {
     return result;
 }
 
-exports.getAppleDeviceInfo = function getAppleDeviceInfo(start, callback) {
-	con.query("select * from deviceInfo where vendor = 'Apple Inc.' limit 50000", function (err, rows) {
-		callback(null, JSON.stringify(serverAnswerGetAppleDeviceInfo(rows, start)));
+exports.getCourseRegistration = function getCourseRegistration(start, callback) {
+	con.query("select * from dangkymonhoc where maMH = '1000'", function (err, rows) {
+		callback(null, JSON.stringify(serverAnswerGetCourseRegistration(rows, start)));
 	})
 };
 
-function serverAnswerGetAppleDeviceInfo(Rows, Start) {
+function serverAnswerGetCourseRegistration(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -46,13 +46,13 @@ function serverAnswerGetAppleDeviceInfo(Rows, Start) {
     return result;
 }
 
-exports.getUserInfoJoinUserDevice = function getUserInfoJoinUserDevice(start, callback) {
-	con.query("select * from userDevice ud JOIN deviceInfo di on ud.deviceID = di.id limit 500", function (err, rows) {
-		callback(null, JSON.stringify(serverAnswerGetUserInfoJoinUserDevice(rows, start)));
+exports.getStudentsCourseRegistration = function getStudentsCourseRegistration(start, callback) {
+	con.query("select * from sinhvien join dangkymonhoc limit 1000000", function (err, rows) {
+		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistration(rows, start)));
 	})
 };
 
-function serverAnswerGetUserInfoJoinUserDevice(Rows, Start) {
+function serverAnswerGetStudentsCourseRegistration(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -61,13 +61,13 @@ function serverAnswerGetUserInfoJoinUserDevice(Rows, Start) {
     return result;
 }
 
-exports.getUserInfoJoinJoinDeviceInfo = function getUserInfoJoinUserDeviceJoinDeviceInfo(start, callback) {
-	con.query("select * from userDevice ud INNER JOIN deviceInfo di on ud.deviceID = di.id INNER JOIN userInfo ui on ui.id = ud.loginID limit 10", function (err, rows) {
-		callback(null, JSON.stringify(serverAnswerGetUserInfoJoinUserDeviceJoinDeviceInfo(rows, start)));
+exports.getStudentsCourseRegistrationCourse = function getStudentsCourseRegistrationCourse(start, callback) {
+	con.query("select * from sinhvien join dangkymonhoc join monhoc limit 500000", function (err, rows) {
+		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistrationCourse(rows, start)));
 	})
 };
 
-function serverAnswerGetUserInfoJoinUserDeviceJoinDeviceInfo(Rows, Start) {
+function serverAnswerGetStudentsCourseRegistrationCourse(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
     result.push({
@@ -76,8 +76,8 @@ function serverAnswerGetUserInfoJoinUserDeviceJoinDeviceInfo(Rows, Start) {
     return result;
 }
 
-exports.insertUser = function insertUser(start, callback) {
-	con.query("INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com');", function (err, rows) {
+exports.insertStudent = function insertStudent(start, callback) {
+	con.query("INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com')", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
@@ -85,8 +85,8 @@ exports.insertUser = function insertUser(start, callback) {
 	})
 }
 
-exports.deleteUser = function deleteUser(start, callback) {
-	con.query("DELETE FROM sinhvien WHERE maSV = '12345';", function (err, rows) {
+exports.deleteStudent = function deleteStudent(start, callback) {
+	con.query("DELETE FROM sinhvien WHERE maSV = '12345'", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
@@ -94,8 +94,8 @@ exports.deleteUser = function deleteUser(start, callback) {
 	})
 }
 
-exports.updateUser = function updateUser(start, callback) {
-	con.query("update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000';", function (err, rows) {
+exports.updateStudent = function updateStudent(start, callback) {
+	con.query("update sinhvien set hoten = 'Nguyen Van A' where maSV = '1000'", function (err, rows) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
