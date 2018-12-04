@@ -3,8 +3,8 @@ var mysql = require("mysql");
 var con = mysql.createConnection({
    host: "localhost",
    user: "root",
-   password: "1234",
-   database: "dbmsfinal"
+   password: "",
+   database: "dangkymonhoc" 
 });
 
 con.connect(function (err) {
@@ -32,7 +32,7 @@ function serverAnswerGetStudents(Rows, Start) {
 }
 
 exports.getCourseRegistration = function getCourseRegistration(start, callback) {
-	con.query("select * from dangkymonhoc where maMH = '1000'", function (err, rows) {
+	con.query("select * from dangkyMH where maMH = '1000'", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetCourseRegistration(rows, start)));
 	})
 };
@@ -47,7 +47,7 @@ function serverAnswerGetCourseRegistration(Rows, Start) {
 }
 
 exports.getStudentsCourseRegistration = function getStudentsCourseRegistration(start, callback) {
-	con.query("select * from sinhvien join dangkymonhoc limit 1000000", function (err, rows) {
+	con.query("select * from sinhvien join dangkyMH limit 1000", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistration(rows, start)));
 	})
 };
@@ -62,7 +62,7 @@ function serverAnswerGetStudentsCourseRegistration(Rows, Start) {
 }
 
 exports.getStudentsCourseRegistrationCourse = function getStudentsCourseRegistrationCourse(start, callback) {
-	con.query("select * from sinhvien join dangkymonhoc join monhoc limit 500000", function (err, rows) {
+	con.query("select * from sinhvien join dangkyMH join monhoc limit 5000", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistrationCourse(rows, start)));
 	})
 };

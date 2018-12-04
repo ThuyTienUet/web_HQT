@@ -1,3 +1,4 @@
+let path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var SQL = require('./mysql');
@@ -5,11 +6,15 @@ var RT = require('./rethinkdb');
 var app = express();
 var port = 5555;
 
-app.listen(port);
+
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({	extended: true })); 
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname,'../client/index.html'))
+})
+app.listen(port);
 console.log('\n============================ LISTENING ON PORT 5555================================\n');
 
 app.get('/mysql/getStudents', function (req, res) {
