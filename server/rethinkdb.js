@@ -23,7 +23,7 @@ function serverAnswerRGetStudents(Start) {
 exports.rgetCourseRegistration = function rgetCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('dangkymonhoc').filter({maMH:"1000"}).count().run(conn, function(err, res) {
+  		r.db('dbms').table('dangkyMH').filter({maMH:"1000"}).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRGetCourseRegistration(start)));
@@ -45,7 +45,7 @@ function serverAnswerRGetCourseRegistration(Start) {
 exports.rgetStudentsCourseRegistration = function rgetStudentsCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table("sinhvien").innerJoin(r.table("dangkymonhoc"), function (sinhvien, dangkymonhoc) {return userdevice("deviceid").eq(deviceinfo("id"));}).zip().limit(10).count().run(conn, function(err, res) {
+  		r.db('dbms').table("sinhvien").innerJoin(r.table("dangkyMH"), function (sinhvien, dangkyMH) {return dangkyMH("maSV").eq(sinhvien("maSV"));}).zip().limit(1000).count().run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRGetStudentsCourseRegistration(start)));
@@ -65,7 +65,7 @@ function serverAnswerRGetStudentsCourseRegistration(Start) {
 exports.rinsertStudent = function rinsertStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('deviceinfo').insert({id:100000000,mash:100000,vendor:"asdad"}).run(conn, function(err, res) {
+  		r.db('dbms').table('sinhvien').insert({maSV:100000000, hoten:'Nguyen Van B', email: 'nvb@gmail.com'}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRInsertStudent(start)));
@@ -85,7 +85,7 @@ function serverAnswerRInsertStudent(Start) {
 exports.rdeleteStudent = function rdeleteStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('deviceinfo').filter({id:100000000}).run(conn, function(err, res) {
+  		r.db('dbms').table('sinhvien').filter({maSV:12345}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRDeleteStudent(start)));
@@ -105,7 +105,7 @@ function serverAnswerRDeleteStudent(Start) {
 exports.rupdateStudent = function rupdateStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dbms').table('deviceinfo').filter({id:100000000}).update({mash:"asddsgfg"}).run(conn, function(err, res) {
+  		r.db('dbms').table('sinhvien').filter({maSV:100000000}).update({hoten: 'Nguyen Van A'}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRUpdateStudent(start)));

@@ -16,14 +16,10 @@
     "url": "https://github.com/ThuyTienUet/web_HQT/issues"
   },
   "homepage": "https://github.com/ThuyTienUet/web_HQT#readme",
-  "body-parser": "^1.18.3",
-  "express": "^4.16.4",
-  "mysql": "^2.16.0",
-  "rethink": "^1.4.0",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "rethink": "^1.4.0"
+    "path": "^0.12.7",
+    "rethinkdb": "^2.3.3"
   }
 }
