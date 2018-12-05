@@ -9,7 +9,7 @@
                 // console.log(data);
                 // console.log(td);
                 // console.log(td.prev());
-                alert(data);
+                alert('Duration: ' + data);
                 // $('#'+id).remove();
                 td.textContent = data;
             }
@@ -25,7 +25,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -39,7 +39,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -53,7 +53,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -67,7 +67,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -81,7 +81,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -95,7 +95,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -109,7 +109,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -123,7 +123,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -137,7 +137,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -151,7 +151,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
@@ -165,7 +165,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })  
     }
@@ -179,7 +179,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert(data);
+                alert('Duration: ' + data);
             }
         })
     }
