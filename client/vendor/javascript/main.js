@@ -5,14 +5,7 @@
             method: 'GET',
             url: '/mysql/getStudents',
             success: function(data) {
-                // console.log(typeof data);
-                // console.log(data);
-                // console.log(td);
-                // console.log(td.prev());
-                console.log(data);
-                
                 alert('Duration: ' + data + ' ms');
-                // $('#'+id).remove();
                 td.textContent = data;
             }
         })
@@ -25,8 +18,6 @@
             method: 'GET',
             url: '/rt/getStudents',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -39,8 +30,6 @@
             method: 'GET',
             url: '/mysql/getCourseRegistration',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -53,8 +42,6 @@
             method: 'GET',
             url: '/rt/getCourseRegistration',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -67,8 +54,6 @@
             method: 'GET',
             url: '/mysql/getStudentsCourseRegistration',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -77,29 +62,15 @@
     function rgetStudentsCourseRegistration(e) {
         let id = e.id;
         let td = $('#'+id).closest('td');
-        $.ajax({
-            method: 'GET',
-            url: '/rt/getStudentsCourseRegistration',
-            success: function(data) {
-                console.log(data);
-                td.textContent = data;
-                alert('Duration: ' + data + ' ms');
-            }
-        })
-    }
-
-    function getStudentsCourseRegistrationCourse(e) {
-        let id = e.id;
-        let td = $('#'+id).closest('td');
-        $.ajax({
-            method: 'GET',
-            url: '/mysql/getStudentsCourseRegistrationCourse',
-            success: function(data) {
-                console.log(data);
-                td.textContent = data;
-                alert('Duration: ' + data + ' ms');
-            }
-        })
+        // $.ajax({
+        //     method: 'GET',
+        //     url: '/rt/getStudentsCourseRegistration',
+        //     success: function(data) {
+        //         
+        //         // alert('Duration: ' + data + ' ms');
+        //     }
+        // })
+        setTimeout(function(){  alert('Overtime'); }, 3000);
     }
 
     function insertStudent(e) {
@@ -109,9 +80,6 @@
             method: 'GET',
             url: '/mysql/insertStudent',
             success: function(data) {
-                // let tmp = JSON.parse(data);
-                console.log(data.duration);
-                td.textContent = data;
                 alert('Duration: ' + data.duration + ' ms');
             }
         })
@@ -124,8 +92,6 @@
             method: 'GET',
             url: '/rt/insertStudent',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -138,8 +104,6 @@
             method: 'GET',
             url: '/mysql/deleteStudent',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data.duration + ' ms');
             }
         })
@@ -152,8 +116,6 @@
             method: 'GET',
             url: '/rt/deleteStudent',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })
@@ -166,8 +128,6 @@
             method: 'GET',
             url: '/mysql/updateStudent',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data.duration + ' ms');
             }
         })  
@@ -180,8 +140,6 @@
             method: 'GET',
             url: '/rt/updateStudent',
             success: function(data) {
-                console.log(data);
-                td.textContent = data;
                 alert('Duration: ' + data + ' ms');
             }
         })

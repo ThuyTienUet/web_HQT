@@ -14,10 +14,6 @@ exports.rgetStudents = function rgetStudents(start, callback) {
 function serverAnswerRGetStudents(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
 
@@ -35,14 +31,8 @@ exports.rgetCourseRegistration = function rgetCourseRegistration(start, callback
 function serverAnswerRGetCourseRegistration(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
-
-/* ke tu ham nay chua sua ==> */
 
 exports.rgetStudentsCourseRegistration = function rgetStudentsCourseRegistration(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
@@ -58,10 +48,6 @@ exports.rgetStudentsCourseRegistration = function rgetStudentsCourseRegistration
 function serverAnswerRGetStudentsCourseRegistration(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
 
@@ -79,10 +65,6 @@ exports.rinsertStudent = function rinsertStudent(start, callback) {
 function serverAnswerRInsertStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
 
@@ -100,17 +82,13 @@ exports.rdeleteStudent = function rdeleteStudent(start, callback) {
 function serverAnswerRDeleteStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
 
 exports.rupdateStudent = function rupdateStudent(start, callback) {
 	r.connect({ host: 'localhost', port: 28015 }, function(err, conn) {
   		if(err) throw err;
-  		r.db('dangkymonhoc').table('sinhvien').filter({maSV:100000000}).update({hoten: 'Nguyen Van A'}).run(conn, function(err, res) {
+  		r.db('dangkymonhoc').table('sinhvien').filter({maSV:1000}).update({hoten: 'Nguyen Van A'}).run(conn, function(err, res) {
     		if(err) throw err;
     		console.log(res);
     		callback(null, JSON.stringify(serverAnswerRUpdateStudent(start)));
@@ -121,9 +99,5 @@ exports.rupdateStudent = function rupdateStudent(start, callback) {
 function serverAnswerRUpdateStudent(Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    // result.push({
-    // 	duration: duration
-    // })
-	// return result;
 	return duration;
 }
