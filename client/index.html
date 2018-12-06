@@ -52,7 +52,7 @@
                         <button id='rquery3' type="button" class="btn btn-success" onclick="rgetStudentsCourseRegistration(this)">Excute</button>
                     </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>
                         select * from sinhvien join dangkymonhoc join monhoc limit 500000
                     </td>
@@ -62,10 +62,10 @@
                     <td>
                         No support
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>
-                        insert into sinhvien(hoten, email) values ('Nguyen Van B', 'nvb@gmail.com')
+                        INSERT INTO sinhvien(hoten, email) VALUES ('Nguyen Van B', 'nvb@gmail.com')
                     </td>
                     <td>
                         <button id='query5' type="button" class="btn btn-primary" onclick="insertStudent(this)">Excute</button>
@@ -76,7 +76,7 @@
                 </tr>
                 <tr>
                     <td>
-                        delete from sinhvien where maSV = '12345'
+                        DELETE FROM sinhvien WHERE maSV = '12345'
                     </td>
                     <td>
                         <button id='query6' type="button" class="btn btn-primary" onclick="deleteStudent(this)">Excute</button>

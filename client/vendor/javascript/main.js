@@ -9,7 +9,9 @@
                 // console.log(data);
                 // console.log(td);
                 // console.log(td.prev());
-                alert('Duration: ' + data);
+                console.log(data);
+                
+                alert('Duration: ' + data + ' ms');
                 // $('#'+id).remove();
                 td.textContent = data;
             }
@@ -25,7 +27,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -39,7 +41,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -53,7 +55,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -67,7 +69,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -81,7 +83,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -95,7 +97,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -107,9 +109,10 @@
             method: 'GET',
             url: '/mysql/insertStudent',
             success: function(data) {
-                console.log(data);
+                // let tmp = JSON.parse(data);
+                console.log(data.duration);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data.duration + ' ms');
             }
         })
     }
@@ -123,7 +126,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -137,7 +140,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data.duration + ' ms');
             }
         })
     }
@@ -151,7 +154,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }
@@ -165,7 +168,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data.duration + ' ms');
             }
         })  
     }
@@ -179,7 +182,7 @@
             success: function(data) {
                 console.log(data);
                 td.textContent = data;
-                alert('Duration: ' + data);
+                alert('Duration: ' + data + ' ms');
             }
         })
     }

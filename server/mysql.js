@@ -25,14 +25,15 @@ exports.getStudents = function getSTudents(start, callback) {
 function serverAnswerGetStudents(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    result.push({
-    	duration: duration
-    })
-    return result;
+    // result.push({
+    // 	duration: duration
+    // })
+	// return result;
+	return duration;
 }
 
 exports.getCourseRegistration = function getCourseRegistration(start, callback) {
-	con.query("select * from dangkyMH where maMH = '1000'", function (err, rows) {
+	con.query("select * from dangkymh where maMH = '1000'", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetCourseRegistration(rows, start)));
 	})
 };
@@ -40,14 +41,15 @@ exports.getCourseRegistration = function getCourseRegistration(start, callback) 
 function serverAnswerGetCourseRegistration(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    result.push({
-    	duration: duration
-    })
-    return result;
+    // result.push({
+    // 	duration: duration
+    // })
+	// return result;
+	return duration;
 }
 
 exports.getStudentsCourseRegistration = function getStudentsCourseRegistration(start, callback) {
-	con.query("select * from sinhvien join dangkyMH limit 1000", function (err, rows) {
+	con.query("select * from sinhvien join dangkymh limit 1000", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistration(rows, start)));
 	})
 };
@@ -55,14 +57,15 @@ exports.getStudentsCourseRegistration = function getStudentsCourseRegistration(s
 function serverAnswerGetStudentsCourseRegistration(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    result.push({
-    	duration: duration
-    })
-    return result;
+    // result.push({
+    // 	duration: duration
+    // })
+	// return result;
+	return duration;
 }
 
 exports.getStudentsCourseRegistrationCourse = function getStudentsCourseRegistrationCourse(start, callback) {
-	con.query("select * from sinhvien join dangkyMH join monhoc limit 5000", function (err, rows) {
+	con.query("select * from sinhvien join dangkymh join monhoc limit 5000", function (err, rows) {
 		callback(null, JSON.stringify(serverAnswerGetStudentsCourseRegistrationCourse(rows, start)));
 	})
 };
@@ -70,10 +73,11 @@ exports.getStudentsCourseRegistrationCourse = function getStudentsCourseRegistra
 function serverAnswerGetStudentsCourseRegistrationCourse(Rows, Start) {
 	var result = [];
 	var duration = Date.now() - Start;
-    result.push({
-    	duration: duration
-    })
-    return result;
+    // result.push({
+    // 	duration: duration
+    // })
+	// return result;
+	return duration;
 }
 
 exports.insertStudent = function insertStudent(start, callback) {
@@ -81,7 +85,8 @@ exports.insertStudent = function insertStudent(start, callback) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
-        callback(null, result);
+		callback(null, result);
+		// callback(null, duration);
 	})
 }
 
@@ -90,7 +95,8 @@ exports.deleteStudent = function deleteStudent(start, callback) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
-        callback(null, result);
+		callback(null, result);
+		// callback(null, duration);
 	})
 }
 
@@ -99,6 +105,7 @@ exports.updateStudent = function updateStudent(start, callback) {
 		var result = [];
         var duration = Date.now() - start;
         result = {'duration' : duration};
-        callback(null, result);
+		callback(null, result);
+		// callback(null, duration);
 	})
 }
